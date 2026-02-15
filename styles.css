@@ -19,6 +19,12 @@ body{
   line-height: 1.45;
 }
 
+/* Prevent sticky nav from covering content when jumping to anchors */
+html { scroll-padding-top: 70px; }
+
+/* Add space between hero and grid */
+main.container { padding-top: 18px; }
+
 .container{
   width: min(1100px, 92vw);
   margin: 0 auto;
@@ -227,4 +233,89 @@ h3{
   .card{ grid-column: span 12; }
   .skate{ grid-template-columns: 1fr; }
   .hero{ height: 320px; }
+}
+
+/* Top nav */
+.topnav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(246, 251, 255, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topnav__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.brand{
+  font-weight: 900;
+  color: var(--steel);
+  letter-spacing: 0.3px;
+}
+.topnav__links{
+  display: flex;
+  gap: 14px;
+}
+.topnav__links a{
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+}
+.topnav__links a:hover{
+  background: rgba(169,207,231,0.35);
+  border: 1px solid rgba(47,93,126,0.25);
+}
+
+/* Reveal on scroll animation */
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.reveal--visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Clickable stats */
+.stat{
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition: transform 160ms ease;
+}
+.stat:hover{
+  transform: translateY(-2px);
+}
+.stat::after{
+  content: "Click for more";
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.8;
+}
+.stat--open{
+  outline: 2px solid rgba(47,93,126,0.35);
+}
+.stat--open::after{
+  content: "Zakim Bridge key metric (tap again to close)";
+}
+
+/* Mobile nav wrap */
+@media (max-width: 720px){
+  .topnav__inner{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .topnav__links{
+    flex-wrap: wrap;
+  }
 }
