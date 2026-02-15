@@ -8,8 +8,22 @@
 </head>
 
 <body>
+  <!-- Sticky Nav -->
+  <nav class="topnav">
+    <div class="container topnav__inner">
+      <div class="brand">Zakim Bridge</div>
+      <div class="topnav__links">
+        <a href="#history">History</a>
+        <a href="#engineering">Engineering</a>
+        <a href="#impact">Impact</a>
+        <a href="#skatepark">Skatepark</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- HERO -->
   <header class="hero">
+    <!-- Make sure this filename matches your actual file (case + extension) -->
     <img class="hero__bg" src="zakim-hero.png" alt="Zakim Bridge skyline" />
     <div class="hero__overlay"></div>
 
@@ -24,7 +38,7 @@
   <main class="container">
     <section class="grid">
       <!-- HISTORICAL -->
-      <article class="card">
+      <article id="history" class="card reveal">
         <h2>Historical Facts</h2>
 
         <ul class="timeline">
@@ -79,7 +93,7 @@
       </article>
 
       <!-- ENGINEERING -->
-      <article class="card">
+      <article id="engineering" class="card reveal">
         <h2>Engineering &amp; Structure</h2>
 
         <div class="pill-row">
@@ -113,7 +127,7 @@
       </article>
 
       <!-- PRESENT DAY IMPACT -->
-      <article class="card">
+      <article id="impact" class="card reveal">
         <h2>Present Day Impact</h2>
         <p class="muted">
           A major Boston transportation artery carrying Interstate 93 traffic between Boston and Charlestown.
@@ -134,8 +148,9 @@
       </article>
 
       <!-- SKATEPARK -->
-      <article class="card card--wide skate">
+      <article id="skatepark" class="card card--wide skate reveal">
         <div class="skate__media">
+          <!-- Make sure this filename matches your actual file (case + extension) -->
           <img src="skatepark.jpg" alt="Skatepark under the Zakim Bridge" />
         </div>
 
@@ -160,9 +175,8 @@
       <p>Made from infographic facts about the Zakim Bridge and the Lynch Family Skatepark.</p>
     </footer>
   </main>
+
+  <!-- Interactivity -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
